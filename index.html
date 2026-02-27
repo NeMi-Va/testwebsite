@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salesforce Web-to-Lead Form</title>
+</head>
+<body>
+
+<h2>Submit Your Device Information</h2>
+
+<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dfj00000HCHXx" method="POST">
+    <input type="hidden" name="oid" value="00Dfj00000HCHXx">
+    <input type="hidden" name="retURL" value="https://upload.wikimedia.org/wikipedia/commons/8/8f/Thankyou-text.png">
+
+    <label for="first_name">First Name</label>
+    <input id="first_name" maxlength="40" name="first_name" size="20" type="text"><br>
+
+    <label for="last_name">Last Name</label>
+    <input id="last_name" maxlength="80" name="last_name" size="20" type="text"><br>
+
+    <label for="email">Email</label>
+    <input id="email" maxlength="80" name="email" size="20" type="text"><br>
+
+    <label for="phone">Phone</label>
+    <input id="phone" maxlength="40" name="phone" size="20" type="text"><br>
+
+    Device Type:
+    <select id="00Nfj000037tfwD" name="00Nfj000037tfwD" title="Device Type">
+        <option value="">--None--</option>
+        <option value="Smartphone">Smartphone</option>
+        <option value="Laptop / Computer">Laptop / Computer</option>
+    </select><br>
+
+    Device Condition:
+    <select id="00Nfj000037tksf" name="00Nfj000037tksf" title="Device Condition">
+        <option value="">--None--</option>
+        <option value="New">New</option>
+        <option value="Good">Good</option>
+        <option value="Fair">Fair</option>
+        <option value="Damaged">Damaged</option>
+    </select><br>
+
+    Purchase Year:
+    <input id="00Nfj000037tm01" name="00Nfj000037tm01" size="20" type="text"><br>
+
+    Seller's Estimated Price:
+    <input id="00Nfj000037tqYH" name="00Nfj000037tqYH" size="20" type="text"><br>
+
+    Device Details:
+    <textarea id="00Nfj000036wuXt" name="00Nfj000036wuXt" wrap="soft"></textarea><br>
+
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+</body>
+</html>
