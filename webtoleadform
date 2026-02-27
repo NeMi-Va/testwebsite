@@ -1,39 +1,242 @@
+
+
 <!DOCTYPE html>
-<html>
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
+<html lang="en">
 
-<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dfj00000HCHXx" method="POST">
+<head>
 
-<input type=hidden name="oid" value="00Dfj00000HCHXx">
-<input type=hidden name="retURL" value="https://upload.wikimedia.org/wikipedia/commons/8/8f/Thankyou-text.png">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 
-<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+    <title>Salesforce Web-to-Lead Form</title>
 
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+    <style>
 
-<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+        body {
 
-Device Type:<select  id="00Nfj000037tfwD" name="00Nfj000037tfwD" title="Device Type"><option value="">--None--</option><option value="Smartphone">Smartphone</option>
-<option value="Laptop / Computer">Laptop / Computer</option>
-</select><br>
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-Device Condition:<select  id="00Nfj000037tksf" name="00Nfj000037tksf" title="Device Condition"><option value="">--None--</option><option value="New">New</option>
-<option value="Good">Good</option>
-<option value="Fair">Fair</option>
-<option value="Damaged">Damaged</option>
-</select><br>
+            background-color: #f4f6f9;
 
-Purchase Year:<input  id="00Nfj000037tm01" name="00Nfj000037tm01" size="20" type="text" /><br>
+            display: flex;
 
-Seller&#39;s Estimated Price:<input  id="00Nfj000037tqYH" name="00Nfj000037tqYH" size="20" type="text" /><br>
+            justify-content: center;
 
-Device Details:<textarea  id="00Nfj000036wuXt" name="00Nfj000036wuXt" type="text" wrap="soft"></textarea><br>
+            padding: 40px 20px;
 
-<input type="submit" name="submit">
-</html>
+        }
+
+        
+
+        .form-container {
+
+            background-color: #ffffff;
+
+            padding: 30px 40px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+            width: 100%;
+
+            max-width: 450px;
+
+        }
+
+
+        form {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+        label {
+
+            margin-top: 15px;
+
+            margin-bottom: 5px;
+
+            font-weight: 600;
+
+            color: #333333;
+
+            font-size: 14px;
+
+        }
+
+
+        /* Added label tags around plain text for consistency */
+
+        input[type="text"], 
+
+        select, 
+
+        textarea {
+
+            padding: 10px 12px;
+
+            border: 1px solid #cccccc;
+
+            border-radius: 4px;
+
+            font-size: 14px;
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            transition: border-color 0.2s ease;
+
+        }
+
+
+        input[type="text"]:focus, 
+
+        select:focus, 
+
+        textarea:focus {
+
+            outline: none;
+
+            border-color: #0070d2; /* Default Salesforce Blue focus */
+
+        }
+
+
+        textarea {
+
+            resize: vertical;
+
+            min-height: 80px;
+
+        }
+
+
+        input[type="submit"] {
+
+            margin-top: 25px;
+
+            padding: 12px;
+
+            background-color: #0070d2;
+
+            color: #ffffff;
+
+            border: none;
+
+            border-radius: 4px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: background-color 0.2s ease;
+
+        }
+
+
+        input[type="submit"]:hover {
+
+            background-color: #005bb5;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="form-container">
+
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dfj00000HCHXx" method="POST">
+
+
+            <input type=hidden name="oid" value="00Dfj00000HCHXx">
+
+            <input type=hidden name="retURL" value="https://upload.wikimedia.org/wikipedia/commons/8/8f/Thankyou-text.png">
+
+            <label for="first_name">First Name</label>
+
+            <input id="first_name" maxlength="40" name="first_name" type="text" />
+
+
+            <label for="last_name">Last Name</label>
+
+            <input id="last_name" maxlength="80" name="last_name" type="text" />
+
+
+            <label for="email">Email</label>
+
+            <input id="email" maxlength="80" name="email" type="text" />
+
+
+            <label for="phone">Phone</label>
+
+            <input id="phone" maxlength="40" name="phone" type="text" />
+
+
+            <label for="00Nfj000037tfwD">Device Type:</label>
+
+            <select id="00Nfj000037tfwD" name="00Nfj000037tfwD" title="Device Type">
+
+                <option value="">--None--</option>
+
+                <option value="Smartphone">Smartphone</option>
+
+                <option value="Laptop / Computer">Laptop / Computer</option>
+
+            </select>
+
+
+            <label for="00Nfj000037tksf">Device Condition:</label>
+
+            <select id="00Nfj000037tksf" name="00Nfj000037tksf" title="Device Condition">
+
+                <option value="">--None--</option>
+
+                <option value="New">New</option>
+
+                <option value="Good">Good</option>
+
+                <option value="Fair">Fair</option>
+
+                <option value="Damaged">Damaged</option>
+
+            </select>
+
+
+            <label for="00Nfj000037tm01">Purchase Year:</label>
+
+            <input id="00Nfj000037tm01" name="00Nfj000037tm01" type="text" />
+
+
+            <label for="00Nfj000037tqYH">Seller's Estimated Price:</label>
+
+            <input id="00Nfj000037tqYH" name="00Nfj000037tqYH" type="text" />
+
+
+            <label for="00Nfj000036wuXt">Device Details:</label>
+
+            <textarea id="00Nfj000036wuXt" name="00Nfj000036wuXt" wrap="soft"></textarea>
+
+
+            <input type="submit" name="submit" value="Submit">
+
+        </form>
+
+    </div>
+
+
+</body>
+
+</html> 
