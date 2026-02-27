@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html>
-<body>
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-<!--  If necessary, please modify the charset parameter to specify the        -->
-<!--  character set of your HTML page.                                        -->
-<!--  ----------------------------------------------------------------------  -->
-
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
 <!--  ----------------------------------------------------------------------  -->
@@ -43,5 +36,4 @@ Seller&#39;s Estimated Price:<input  id="00Nfj000037tqYH" name="00Nfj000037tqYH"
 Device Details:<textarea  id="00Nfj000036wuXt" name="00Nfj000036wuXt" type="text" wrap="soft"></textarea><br>
 
 <input type="submit" name="submit">
-</body>
 </html>
