@@ -2,58 +2,141 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Salesforce Web-to-Lead Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Device Info | Salesforce Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #00a1e0;
+            box-shadow: 0 0 5px rgba(0, 161, 224, 0.2);
+        }
+
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #00a1e0;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0077b5;
+        }
+
+        .field-group {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Submit Your Device Information</h2>
+<div class="form-container">
+    <h2>Submit Your Device Information</h2>
 
-<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dfj00000HCHXx" method="POST">
-    <input type="hidden" name="oid" value="00Dfj00000HCHXx">
-    <input type="hidden" name="retURL" value="https://upload.wikimedia.org/wikipedia/commons/8/8f/Thankyou-text.png">
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dfj00000HCHXx" method="POST">
+        <input type="hidden" name="oid" value="00Dfj00000HCHXx">
+        <input type="hidden" name="retURL" value="https://upload.wikimedia.org/wikipedia/commons/8/8f/Thankyou-text.png">
 
-    <label for="first_name">First Name</label>
-    <input id="first_name" maxlength="40" name="first_name" size="20" type="text"><br>
+        <label for="first_name">First Name</label>
+        <input id="first_name" maxlength="40" name="first_name" type="text" placeholder="John" required>
 
-    <label for="last_name">Last Name</label>
-    <input id="last_name" maxlength="80" name="last_name" size="20" type="text"><br>
+        <label for="last_name">Last Name</label>
+        <input id="last_name" maxlength="80" name="last_name" type="text" placeholder="Doe" required>
 
-    <label for="email">Email</label>
-    <input id="email" maxlength="80" name="email" size="20" type="text"><br>
+        <label for="email">Email</label>
+        <input id="email" maxlength="80" name="email" type="text" placeholder="john@example.com">
 
-    <label for="phone">Phone</label>
-    <input id="phone" maxlength="40" name="phone" size="20" type="text"><br>
+        <label for="phone">Phone</label>
+        <input id="phone" maxlength="40" name="phone" type="text" placeholder="(555) 000-0000">
 
-    Device Type:
-    <select id="00Nfj000037tfwD" name="00Nfj000037tfwD" title="Device Type">
-        <option value="">--None--</option>
-        <option value="Smartphone">Smartphone</option>
-        <option value="Laptop / Computer">Laptop / Computer</option>
-    </select><br>
+        <label for="00Nfj000037tfwD">Device Type</label>
+        <select id="00Nfj000037tfwD" name="00Nfj000037tfwD">
+            <option value="">--None--</option>
+            <option value="Smartphone">Smartphone</option>
+            <option value="Laptop / Computer">Laptop / Computer</option>
+        </select>
 
-    Device Model:
-    <input id="00Nfj000037tTNB" name="00Nfj000037tTNB" size="20" type="text"><br>
+        <label for="00Nfj000037tTNB">Device Model</label>
+        <input id="00Nfj000037tTNB" name="00Nfj000037tTNB" type="text" placeholder="e.g. iPhone 15 Pro">
 
-    Device Condition:
-    <select id="00Nfj000037tksf" name="00Nfj000037tksf" title="Device Condition">
-        <option value="">--None--</option>
-        <option value="New">New</option>
-        <option value="Good">Good</option>
-        <option value="Fair">Fair</option>
-        <option value="Damaged">Damaged</option>
-    </select><br>
+        <label for="00Nfj000037tksf">Device Condition</label>
+        <select id="00Nfj000037tksf" name="00Nfj000037tksf">
+            <option value="">--None--</option>
+            <option value="New">New</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+            <option value="Damaged">Damaged</option>
+        </select>
 
-    Purchase Year:
-    <input id="00Nfj000037tm01" name="00Nfj000037tm01" size="20" type="text"><br>
+        <label for="00Nfj000037tm01">Purchase Year</label>
+        <input id="00Nfj000037tm01" name="00Nfj000037tm01" type="text" placeholder="2023">
 
-    Seller's Estimated Price:
-    <input id="00Nfj000037tqYH" name="00Nfj000037tqYH" size="20" type="text"><br>
+        <label for="00Nfj000037tqYH">Seller's Estimated Price</label>
+        <input id="00Nfj000037tqYH" name="00Nfj000037tqYH" type="text" placeholder="$500">
 
-    Device Details:
-    <textarea id="00Nfj000036wuXt" name="00Nfj000036wuXt" wrap="soft"></textarea><br>
+        <label for="00Nfj000036wuXt">Device Details</label>
+        <textarea id="00Nfj000036wuXt" name="00Nfj000036wuXt" wrap="soft" placeholder="Any extra notes..."></textarea>
 
-    <input type="submit" name="submit" value="Submit">
-</form>
+        <input type="submit" name="submit" value="Submit Information">
+    </form>
+</div>
 
 </body>
 </html>
